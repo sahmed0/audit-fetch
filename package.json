@@ -1,0 +1,22 @@
+{
+  "name": "audit-fetch",
+  "version": "1.0.0",
+  "description": "A drop-in fetch replacement that audits HTTP security headers and reports them in the terminal",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "fetch",
+    "security",
+    "http",
+    "headers",
+    "audit"
+  ],
+  "author": "Sajid Ahmed",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.6.2"
+  }
+}
