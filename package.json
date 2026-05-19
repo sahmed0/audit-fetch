@@ -1,7 +1,7 @@
 {
   "name": "audit-fetch",
   "version": "1.0.0",
-  "description": "A drop-in fetch replacement that audits HTTP security headers and reports them in the terminal",
+  "description": "A drop-in fetch replacement that audits HTTP security response headers and prints a colour-coded report to your terminal",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -16,7 +16,15 @@
   ],
   "author": "Sajid Ahmed",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahmed0/audit-fetch.git"
+  },
+  "homepage": "https://github.com/sahmed0/audit-fetch.git#readme",
+  "bugs": {
+    "url": "https://github.com/sahmed0/audit-fetch/issues"
+  },
   "dependencies": {
-    "chalk": "^5.6.2"
+    "chalk": "^5.0.0"
   }
 }
