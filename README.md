@@ -2,24 +2,17 @@
 
 A drop-in replacement for `fetch` that audits HTTP security response headers and prints a colour-coded report to your terminal.
 
-```js
-const response = await auditFetch('https://api.example.com')
-```
 
+### Example
+
+```js
+import { auditFetch } from 'audit-fetch'
+
+await auditFetch('https://github.com')
 ```
-┌──────────────────────────────────────────────────────┐
-│  auditFetch — Security Report                        │
-│  GET https://api.example.com                         │
-│  Score: 3/6  Grade: C  [██████████░░░░░░░░░░]        │
-├──────────────────────────────────────────────────────┤
-│ ✅     Strict-Transport-Security        present     │
-│ ✅     X-Content-Type-Options           present     │
-│ ✅     X-Frame-Options                  present     │
-│ ⚠️     Content-Security-Policy          missing     │
-│ ⚠️     Referrer-Policy                  missing     │
-│ ⚠️     Permissions-Policy               missing     │ 
-└──────────────────────────────────────────────────────┘
-```
+<p>
+  <img src="https://github.com/sahmed0/audit-fetch/blob/main/demo.png?raw=true" alt="audit-fetch terminal output" width="600">
+</p>
 
 ## Features
 
