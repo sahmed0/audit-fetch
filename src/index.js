@@ -28,11 +28,33 @@ export async function auditFetch(url, options = {}) {
 
     if (failIndex !== -1 && gradeIndex >= failIndex) {
       throw new Error(
-        `auditFetch: Security audit failed — Grade ${auditResult.grade} does not meet the required threshold of ${failOn.toUpperCase()}`
+        `auditFetch: Security audit failed! Grade ${auditResult.grade} does not meet the required threshold of ${failOn.toUpperCase()}`
       )
     }
   }
 
   // Return the original response completely untouched
   return response
+}
+
+export async function getAuditResult(url, options = {}) {
+  const { audit = {}, ...fetchOptions } = options
+  const { silent = false } = audit
+
+  const method = fetchOptions.method?.toUpperCase() ?? 'GET'
+  const response = await fetch(url, fetchOptions)
+  const auditResult = runAudit(response.headers)
+
+  if (!silent) {
+    renderReport(url, method, auditResult)
+  }
+
+  return {
+    url,
+    status: response.status,
+    grade: auditResult.grade,
+    score: auditResult.score,
+    total: auditResult.total,
+    results: auditResult.results.map(({ recommended: _r, ...r }) => r),
+  }
 }

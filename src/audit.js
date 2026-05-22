@@ -69,7 +69,7 @@ function calculateGrade(score, total) {
   return 'F'
 }
 
-// Main function — runs the full audit and returns a result object
+// Runs the full audit and returns a result object
 export function runAudit(headers) {
   const results = SECURITY_HEADERS.map(header => checkHeader(header, headers))
 

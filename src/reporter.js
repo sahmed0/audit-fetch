@@ -45,7 +45,7 @@ export function renderReport(url, method = 'GET', auditResult) {
 
   console.log('')
   console.log(chalk.bold(`┌${border}┐`))
-  console.log(chalk.bold(`│`) + chalk.cyan.bold('  auditFetch — Security Report' + ' '.repeat(24)) + chalk.bold('│'))
+  console.log(chalk.bold(`│`) + chalk.cyan.bold('  auditFetch - Security Report' + ' '.repeat(24)) + chalk.bold('│'))
   console.log(chalk.bold(`│`) + `  ${chalk.dim(method)} ${chalk.dim(url)}` + ' '.repeat(Math.max(0, 52 - method.length - url.length - 1)) + chalk.bold('│'))
   const scoreLine = `  Score: ${score}/${total}  Grade: ${gradeColour.bold(grade)}`
   const scoreLineRaw = `  Score: ${score}/${total}  Grade: ${grade}`
